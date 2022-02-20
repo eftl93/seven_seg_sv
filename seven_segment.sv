@@ -1,15 +1,14 @@
-module seven_segment(
-					input[3:0]in, 
-					output[6:0]out
+module seven_segment(	input  logic [3:0]in, 
+						output logic [6:0]out
 );
 
-wire [3:0]number_in;
-reg [6:0]segment_out;
+logic [3:0]number_in;
+logic [6:0]segment_out;
 
 assign number_in[3:0] = in[3:0];
-assign out[6:0] = segment_out[6:0];
+assign out[6:0] 	  = segment_out[6:0];
 
-always @(*)
+always_comb
 begin
 	case(number_in)
 		4'h0: segment_out = 7'b1000000;
